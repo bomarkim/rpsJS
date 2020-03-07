@@ -3,8 +3,13 @@
 <html>
 
     <script>
+    function game()
+    {
+        let roundCount= 0;
+        let playerScore = 0;
+        let computerScore = 0;
 
-        
+        while(roundCount<5){
 
         //computer player
         function computerPlay(){
@@ -18,36 +23,42 @@
         function playRound(playerChoice, computerChoice){
 
             if(playerChoice == computerChoice){
-                console.log("It's a draw!!");
+                console.log("Round draw!!");
             }
 
             else if(playerChoice == 'rock'){
                 if(computerChoice == 'scissors'){
-                    console.log("You Win! Rock beats Scissors!")
+                    console.log("Round Win! Rock beats Scissors!")
+                    playerScore++;
                 }
 
                 else{
-                    console.log("You Lose! Rock loses to Paper!")
+                    console.log("Round Lose! Rock loses to Paper!")
+                    computerScore++;
                 }
             }
 
             else if(playerChoice == 'scissors'){
                 if(computerChoice == 'paper'){
-                    console.log("You Win! Scissors beats Paper!")
+                    console.log("Round Win! Scissors beats Paper!")
+                    playerScore++;
                 }
 
                 else{
-                    console.log("You Lose! Scissors loses to Rock!")
+                    console.log("Round Lose! Scissors loses to Rock!")
+                    computerScore++;
                 }
             }
 
             else if(playerChoice == 'paper'){
                 if(computerChoice == 'rock'){
-                    console.log("You Win! Paper beats Rock!")
+                    console.log("Round Win! Paper beats Rock!")
+                    playerScore++;
                 }
 
                 else{
                     console.log("You Lose! Paper loses to Scissors!")
+                    computerScore++;
                 }
             }
             
@@ -63,6 +74,23 @@
         //call func
         playRound(playerChoice, computerChoice);
 
+        roundCount++;
+        }//while
+
+        if(playerScore == computerScore){
+            console.log("It's a draw!!");
+        }
+
+        else if(playerScore > computerScore){
+            console.log("Human player wins!");
+        }
+
+        else{
+            console.log("Computer player wins!");
+        }
+
+    }//end game
+    game() 
     </script>
 
 </html>
