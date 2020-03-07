@@ -3,13 +3,62 @@
 <html>
 
     <script>
+
         //computer player
         function computerPlay(){
-            var textArray = ['Rock', 'Paper', 'Scissors'];
+            var textArray = ['rock', 'paper', 'scissors'];
             var randomNumber = Math.floor(Math.random()*textArray.length);
         
-            console.log(textArray[randomNumber]);
+            return(textArray[randomNumber]);
         }
+
+        //human player
+        function playRound(playerChoice, computerChoice){
+
+            if(playerChoice == computerChoice){
+                console.log("It's a draw!!");
+            }
+
+            else if(playerChoice == 'rock'){
+                if(computerChoice == 'scissors'){
+                    console.log("You Win! Rock beats Scissors!")
+                }
+
+                else{
+                    console.log("You Lose! Rock loses to Paper!")
+                }
+            }
+
+            else if(playerChoice == 'scissors'){
+                if(computerChoice == 'paper'){
+                    console.log("You Win! Scissors beats Paper!")
+                }
+
+                else{
+                    console.log("You Lose! Scissors loses to Rock!")
+                }
+            }
+
+            else if(playerChoice == 'paper'){
+                if(computerChoice == 'rock'){
+                    console.log("You Win! Paper beats Rock!")
+                }
+
+                else{
+                    console.log("You Lose! Paper loses to Scissors!")
+                }
+            }
+            
+            else{
+                console.log("How did you end up here??")
+            }
+        }
+
+        const playerChoice = 'rock';
+        const computerChoice = computerPlay();
+
+        //call func
+        playRound(playerChoice, computerChoice);
 
 
     </script>
