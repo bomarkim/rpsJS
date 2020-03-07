@@ -4,6 +4,8 @@
 
     <script>
 
+        
+
         //computer player
         function computerPlay(){
             var textArray = ['rock', 'paper', 'scissors'];
@@ -50,16 +52,16 @@
             }
             
             else{
-                console.log("How did you end up here??")
+                console.log(`What is ${playerChoice} ??`);
             }
         }
 
-        const playerChoice = 'rock';
+        let pick = prompt("Choose Rock, Paper, or Scissors.");
+        const playerChoice = pick.toLowerCase();
         const computerChoice = computerPlay();
 
         //call func
         playRound(playerChoice, computerChoice);
-
 
     </script>
 
